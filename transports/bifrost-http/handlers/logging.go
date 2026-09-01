@@ -994,8 +994,60 @@ func (h *LoggingHandler) getLogsStats(ctx *fasthttp.RequestCtx) {
 		SendError(ctx, fasthttp.StatusInternalServerError, fmt.Sprintf("Stats calculation failed: %v", err))
 		return
 	}
+	if stats == nil {
+		logger.Error("log stats returned no result")
+		SendError(ctx, fasthttp.StatusInternalServerError, "Stats calculation returned no result")
+		return
+	}
 
-	SendJSON(ctx, stats)
+	response := &LogStatsResponse{SearchStats: *stats}
+
+	// compare_to_previous adds the same stats for the immediately preceding window
+	// of equal length, so the UI can show change-vs-previous-period without having
+	// to derive that window itself (period= is resolved server side above).
+	if compare := string(ctx.QueryArgs().Peek("compare_to_previous")); compare != "" {
+		// An unbounded (all-time) filter has no preceding window to compare against,
+		// so has_previous_period stays false and previous is omitted.
+		if enabled, parseErr := strconv.ParseBool(compare); parseErr == nil && enabled && filters.StartTime != nil && filters.EndTime != nil {
+			previous, prevErr := h.logManager.GetStats(ctx, previousPeriodFilters(filters))
+			switch {
+			case prevErr != nil:
+				// The current period is still useful on its own, so degrade to no
+				// comparison rather than failing the whole request.
+				logger.Warn("failed to get previous period log stats: %v", prevErr)
+			case previous != nil:
+				response.Previous = previous
+				response.HasPreviousPeriod = true
+			}
+		}
+	}
+
+	SendJSON(ctx, response)
+}
+
+// LogStatsResponse is the GET /api/logs/stats payload. SearchStats is embedded so
+// the current period's fields stay at the top level: callers that do not pass
+// compare_to_previous see exactly the shape they saw before it existed.
+type LogStatsResponse struct {
+	logstore.SearchStats
+	Previous          *logstore.SearchStats `json:"previous,omitempty"`
+	HasPreviousPeriod bool                  `json:"has_previous_period"`
+}
+
+// previousPeriodFilters shifts a bounded filter window back by its own duration,
+// ending one nanosecond before the current window starts so the two periods are
+// the same length and never overlap. This mirrors the trend windowing already used
+// by the ranking queries in framework/logstore/rdb.go. Callers must check that both
+// StartTime and EndTime are set.
+func previousPeriodFilters(filters *logstore.SearchFilters) *logstore.SearchFilters {
+	duration := filters.EndTime.Sub(*filters.StartTime)
+	prevStart := filters.StartTime.Add(-duration)
+	prevEnd := filters.StartTime.Add(-time.Nanosecond)
+
+	prev := *filters
+	prev.StartTime = &prevStart
+	prev.EndTime = &prevEnd
+	return &prev
 }
 
 // getLogsHistogram handles GET /api/logs/histogram - Get time-bucketed request counts
