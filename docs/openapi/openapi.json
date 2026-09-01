@@ -68737,7 +68737,7 @@
                     },
                     "keywords": {
                       "type": "object",
-                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, and the same phrase cannot appear in two\ntiers. The field names predate semantic classification and are kept for\nbackward compatibility.\n",
+                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, the normalized lists may contain at most 750\nphrases combined, and the same phrase cannot appear in two tiers. The field\nnames predate semantic classification and are kept for backward compatibility.\n",
                       "additionalProperties": false,
                       "required": [
                         "simple_keywords",
@@ -69027,7 +69027,7 @@
                   },
                   "keywords": {
                     "type": "object",
-                    "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, and the same phrase cannot appear in two\ntiers. The field names predate semantic classification and are kept for\nbackward compatibility.\n",
+                    "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, the normalized lists may contain at most 750\nphrases combined, and the same phrase cannot appear in two tiers. The field\nnames predate semantic classification and are kept for backward compatibility.\n",
                     "additionalProperties": false,
                     "required": [
                       "simple_keywords",
@@ -69294,7 +69294,7 @@
                     },
                     "keywords": {
                       "type": "object",
-                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, and the same phrase cannot appear in two\ntiers. The field names predate semantic classification and are kept for\nbackward compatibility.\n",
+                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, the normalized lists may contain at most 750\nphrases combined, and the same phrase cannot appear in two tiers. The field\nnames predate semantic classification and are kept for backward compatibility.\n",
                       "additionalProperties": false,
                       "required": [
                         "simple_keywords",
@@ -69602,7 +69602,7 @@
                     },
                     "keywords": {
                       "type": "object",
-                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, and the same phrase cannot appear in two\ntiers. The field names predate semantic classification and are kept for\nbackward compatibility.\n",
+                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, the normalized lists may contain at most 750\nphrases combined, and the same phrase cannot appear in two tiers. The field\nnames predate semantic classification and are kept for backward compatibility.\n",
                       "additionalProperties": false,
                       "required": [
                         "simple_keywords",
@@ -70300,7 +70300,7 @@
                     },
                     "keywords": {
                       "type": "object",
-                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, and the same phrase cannot appear in two\ntiers. The field names predate semantic classification and are kept for\nbackward compatibility.\n",
+                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, the normalized lists may contain at most 750\nphrases combined, and the same phrase cannot appear in two tiers. The field\nnames predate semantic classification and are kept for backward compatibility.\n",
                       "additionalProperties": false,
                       "required": [
                         "simple_keywords",
@@ -70591,7 +70591,7 @@
                   },
                   "keywords": {
                     "type": "object",
-                    "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, and the same phrase cannot appear in two\ntiers. The field names predate semantic classification and are kept for\nbackward compatibility.\n",
+                    "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, the normalized lists may contain at most 750\nphrases combined, and the same phrase cannot appear in two tiers. The field\nnames predate semantic classification and are kept for backward compatibility.\n",
                     "additionalProperties": false,
                     "required": [
                       "simple_keywords",
@@ -70858,7 +70858,7 @@
                     },
                     "keywords": {
                       "type": "object",
-                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, and the same phrase cannot appear in two\ntiers. The field names predate semantic classification and are kept for\nbackward compatibility.\n",
+                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, the normalized lists may contain at most 750\nphrases combined, and the same phrase cannot appear in two tiers. The field\nnames predate semantic classification and are kept for backward compatibility.\n",
                       "additionalProperties": false,
                       "required": [
                         "simple_keywords",
@@ -71167,7 +71167,7 @@
                     },
                     "keywords": {
                       "type": "object",
-                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, and the same phrase cannot appear in two\ntiers. The field names predate semantic classification and are kept for\nbackward compatibility.\n",
+                      "description": "Reference phrases for semantic complexity classification, one list per tier.\nEach request is embedded and takes the tier of its nearest phrase. Entries\nshould be whole example prompts rather than individual keywords. Each phrase\nis limited to 2000 characters, the normalized lists may contain at most 750\nphrases combined, and the same phrase cannot appear in two tiers. The field\nnames predate semantic classification and are kept for backward compatibility.\n",
                       "additionalProperties": false,
                       "required": [
                         "simple_keywords",
